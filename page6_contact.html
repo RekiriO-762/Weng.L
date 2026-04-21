@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weng.I – Contact Us</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; background: #fff; color: #111; }
+    header { background: #111; display: flex; align-items: center; justify-content: space-between; padding: 10px 24px; }
+    /* The setting for the logo and search */
+
+    .logo-area { display: flex; align-items: center; gap: 16px; }
+    .logo-img { width: 64px; height: 64px; object-fit: contain; border-radius: 4px; background: #333; }
+    .logo-area a:hover {text-decoration: none;}
+    .site-title { color: #fff; font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
+    .search-bar { display: flex; align-items: center; background: #fff; border-radius: 4px; overflow: hidden; }
+    .search-bar input { border: none; outline: none; padding: 6px 12px; font-size: 0.9rem; width: 180px; }
+    .search-bar button { background: #fff; border: none; padding: 6px 10px; cursor: pointer; font-size: 1rem; color: #555; }
+    .search-bar button:hover { color: #000; }
+    /* Navigation Settings */
+
+    nav { background: #fff; border-bottom: 1px solid #ddd; display: flex; justify-content: center; gap: 60px; padding: 12px 0; }
+    nav a { text-decoration: none; color: #222; font-size: 0.95rem; }
+    nav a.active { font-weight: 700; }
+    nav a:hover { text-decoration: underline; }
+    footer { background: #fff; border-top: 1px solid #ddd; padding: 14px 24px; display: flex; justify-content: space-between; align-items: flex-start; font-size: 0.82rem; color: #444; }
+
+    /* Footer design code */
+
+footer { background: #fff; border-top: 1px solid #ddd; padding: 20px 28px; display: flex; justify-content: center; align-items: center; position:relative ; font-size: 0.82rem; color: #444; }
+    .footer-links { display: flex; flex-direction: column; gap: 3.5px; position: absolute;left: 50%; transform: translateX(-50%);   ; }
+    .footer-links a { color: #444; text-decoration: none; text-align: center; }
+    .footer-links a:hover { text-decoration: underline; }
+    .lang-btn-wrapper { margin-left: auto;}
+    .languages-btn { border: 1px solid #999; background: #fff; padding: 4px 14px; border-radius: 4px; font-size: 0.82rem; cursor: pointer; }
+    
+    .ph-icon { font-size: 2rem; margin-bottom: 6px; }
+    .ph-label { font-weight: bold; font-size: 0.85rem; margin-bottom: 4px; color: #b35a00; }
+
+/* Design code for the text box */
+
+    header { background-color: #5a0040; }
+    main { background-color: #5a0040; min-height: calc(100vh - 160px); display: flex; flex-direction: column; align-items: center; padding: 50px 20px 60px; }
+    .contact-card { background: #fff; border-radius: 16px; padding: 36px 40px 40px; width: 100%; max-width: 460px; }
+    .contact-card h2 { font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 28px; color: #111; }
+    .form-group { display: flex; align-items: flex-start; margin-bottom: 16px; gap: 10px; }
+    .form-group label { font-weight: 700; font-size: 0.9rem; min-width: 68px; padding-top: 8px; color: #111; }
+    .form-group input, .form-group textarea { flex: 1; border: 1px solid #ccc; border-radius: 4px; padding: 7px 10px; font-size: 0.9rem; font-family: inherit; outline: none; transition: border-color 0.2s; }
+    .form-group input:focus, .form-group textarea:focus { border-color: #5a0040; }
+    .form-group textarea { height: 100px; resize: vertical; }
+    .send-btn { display: block; margin: 20px auto 0; background-color: #d94f7a; color: #fff; border: none; border-radius: 6px; padding: 10px 40px; font-size: 0.95rem; cursor: pointer; transition: background 0.2s; }
+    .send-btn:hover { background-color: #b83a63; }
+    .contact-info { margin-top: 36px; text-align: center; color: #fff; line-height: 1.9; font-size: 0.95rem; }
+    .contact-info .info-line { display: flex; align-items: center; justify-content: center; gap: 8px; }
+
+
+  </style>
+  <style>
+    
+    /* Langauge Dropdown */
+    .lang-btn-wrapper { position: relative; display: inline-block; }
+    .lang-dropdown {
+      position: absolute;
+      bottom: 40px;
+      right: 0;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      min-width: 130px;
+      list-style: none;
+      padding: 6px 0;
+      margin: 0;
+      z-index: 1000;
+    }
+    .lang-dropdown li {
+      padding: 8px 18px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+    .lang-dropdown li:hover { background: #e9e9e9; }
+    
+  </style>
+</head>
+<body>
+  <!-- Main Code -->
+
+  <header>
+    <div class="logo-area">
+      <a href="page1_home.html" style="text-decoration: none; display: flex; align-items: center; gap: 16px;">
+      <img src="Pictures-for-website-CN43000/Logo.jpg" alt="Weng.I Logo" class="logo-img">
+       <span class="site-title">Weng.I</span>
+       </a>
+    </div>
+    <div class="search-bar"><input type="text" placeholder="Search"><button>🔍</button></div>
+  </header>
+  <nav>
+    <a href="page1_home.html">Home</a>
+    <a href="page2_about.html">About Us</a>
+    <a href="page3_products.html">Products</a>
+    <a href="page4_purpose.html">Purpose</a>
+    <a href="page5_newsroom.html">Newsroom</a>
+    <a href="page6_contact.html" class="active">Contact Us</a>
+  </nav>
+  
+  <!-- Main body Code -->
+
+  <main>
+    <div class="contact-card">
+      <h2>Send us a message</h2>
+      <div class="form-group"><label for="name">Name:</label><input type="text" id="name" name="name"></div>
+      <div class="form-group"><label for="email">Email:</label><input type="email" id="email" name="email"></div>
+      <div class="form-group"><label for="subject">Subject:</label><input type="text" id="subject" name="subject"></div>
+      <div class="form-group"><label for="message">Message</label><textarea id="message" name="message"></textarea></div>
+      <button class="send-btn" onclick="handleSend()">Send</button>
+    </div>
+   
+    <!-- Footer text code -->
+
+    <div class="contact-info">
+      <div class="info-line"><span>📍</span><strong>19 Afrant Street EK21 2DR, London</strong></div>
+      <div class="info-line"><span>📞</span><span>(+44) +7839 4490839</span></div>
+      <div class="info-line"><span>✉</span><span>info@Ehdj@Rubicon.com</span></div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-links">
+      <span>Copyright @Ehdj@Rubicon.com</span>
+      <a href="#">Cookies – In user accessibility agreement</a>
+      <span>Contact +44 7424 231374</span>
+    </div>
+    <div class="lang-btn-wrapper">
+      <button class="languages-btn" id="langToggleBtn"> Languages</button>
+      <ul class="lang-dropdown" id="langDropdown" style="display: none;">
+        <li data-lang="en">🇬🇧 English</li>
+        <li data-lang="fr">🇫🇷 Français</li>
+        <li data-lang="es">🇪🇸 Español</li>
+      </ul>
+    </div>
+  </footer>
+  
+  <!-- Form Code -->
+
+  <script>
+    function handleSend() {
+      if (!name||!email||!subject||!message) { alert('Please fill in all fields before sending.'); return; }
+      const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) { alert('Please enter a valid email address.'); return; }
+      alert('Thank you, '+name+'! Your message has been sent.');
+      document.getElementById('name').value='';
+      document.getElementById('email').value='';
+      document.getElementById('subject').value='';
+      document.getElementById('message').value='';
+    }
+  </script>
+  <script>
+    
+    // Contact form function
+    function handleSend() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (!name || !email || !subject || !message) { 
+        alert(currentLang === 'fr' ? 'Veuillez remplir tous les champs avant d\'envoyer.' : 
+              currentLang === 'es' ? 'Por favor complete todos los campos antes de enviar.' : 
+              'Please fill in all fields before sending.'); 
+        return; 
+      }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) { 
+        alert(currentLang === 'fr' ? 'Veuillez entrer une adresse email valide.' : 
+              currentLang === 'es' ? 'Por favor ingrese un correo electrónico válido.' : 
+              'Please enter a valid email address.'); 
+        return; 
+      }
+      alert(currentLang === 'fr' ? 'Merci, ' + name + ' ! Votre message a été envoyé.' : 
+            currentLang === 'es' ? '¡Gracias, ' + name + '! Su mensaje ha sido enviado.' : 
+            'Thank you, ' + name + '! Your message has been sent.');
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('subject').value = '';
+      document.getElementById('message').value = '';
+    }
+
+    (function() {
+      'use strict';
+
+      
+      window.currentLang = 'en';
+
+      // ---------- LANGUAGE DATA ----------
+      const translations = {
+       
+        en: {
+          home: 'Home',
+          about: 'About Us',
+          products: 'Products',
+          purpose: 'Purpose',
+          newsroom: 'Newsroom',
+          contact: 'Contact Us',
+          contactHeading: 'Send us a message',
+          nameLabel: 'Name:',
+          emailLabel: 'Email:',
+          subjectLabel: 'Subject:',
+          messageLabel: 'Message',
+          sendBtn: 'Send',
+          address: '19 Afrant Street EK21 2DR, London',
+          phone: '(+44) +7839 4490839',
+          emailContact: 'info@Ehdj@Rubicon.com',
+          copyright: 'Copyright @Ehdj@Rubicon.com',
+          cookies: 'Cookies – In user accessibility agreement',
+          contactFooter: 'Contact +44 7424 231374',
+          searchPlaceholder: 'Search',
+          langButton: ' Languages',
+          namePlaceholder: 'Enter your name',
+          emailPlaceholder: 'Enter your email',
+          subjectPlaceholder: 'Enter subject',
+          messagePlaceholder: 'Enter your message'
+        },
+        
+        fr: {
+          home: 'Accueil',
+          about: 'À propos',
+          products: 'Produits',
+          purpose: 'Objectif',
+          newsroom: 'Salle de presse',
+          contact: 'Contactez-nous',
+          contactHeading: 'Envoyez-nous un message',
+          nameLabel: 'Nom :',
+          emailLabel: 'Email :',
+          subjectLabel: 'Sujet :',
+          messageLabel: 'Message',
+          sendBtn: 'Envoyer',
+          address: '19 Afrant Street EK21 2DR, Londres',
+          phone: '(+44) +7839 4490839',
+          emailContact: 'info@Ehdj@Rubicon.com',
+          copyright: 'Droits d\'auteur @Ehdj@Rubicon.com',
+          cookies: 'Cookies – Accord d\'accessibilité utilisateur',
+          contactFooter: 'Contact +44 7424 231374',
+          searchPlaceholder: 'Rechercher',
+          langButton: ' Langues',
+          namePlaceholder: 'Entrez votre nom',
+          emailPlaceholder: 'Entrez votre email',
+          subjectPlaceholder: 'Entrez le sujet',
+          messagePlaceholder: 'Entrez votre message'
+        },
+        
+        es: {
+          home: 'Inicio',
+          about: 'Sobre nosotros',
+          products: 'Productos',
+          purpose: 'Propósito',
+          newsroom: 'Sala de prensa',
+          contact: 'Contáctenos',
+          contactHeading: 'Envíenos un mensaje',
+          nameLabel: 'Nombre:',
+          emailLabel: 'Correo:',
+          subjectLabel: 'Asunto:',
+          messageLabel: 'Mensaje',
+          sendBtn: 'Enviar',
+          address: '19 Afrant Street EK21 2DR, Londres',
+          phone: '(+44) +7839 4490839',
+          emailContact: 'info@Ehdj@Rubicon.com',
+          copyright: 'Derechos de autor @Ehdj@Rubicon.com',
+          cookies: 'Cookies – Acuerdo de accesibilidad',
+          contactFooter: 'Contacto +44 7424 231374',
+          searchPlaceholder: 'Buscar',
+          langButton: ' Idiomas',
+          namePlaceholder: 'Ingrese su nombre',
+          emailPlaceholder: 'Ingrese su correo',
+          subjectPlaceholder: 'Ingrese el asunto',
+          messagePlaceholder: 'Ingrese su mensaje'
+        }
+      };
+
+      // Add data-key attributes to nav links
+      const navLinks = document.querySelectorAll('nav a');
+      const navKeys = ['home', 'about', 'products', 'purpose', 'newsroom', 'contact'];
+      navLinks.forEach((link, index) => {
+        if (index < navKeys.length) {
+          link.setAttribute('data-key', navKeys[index]);
+        }
+      });
+
+      // Add data-i18n attributes to contact form
+      const contactHeading = document.querySelector('.contact-card h2');
+      if (contactHeading) contactHeading.setAttribute('data-i18n', 'contactHeading');
+
+      const labels = document.querySelectorAll('.form-group label');
+      const labelKeys = ['nameLabel', 'emailLabel', 'subjectLabel', 'messageLabel'];
+      labels.forEach((label, index) => {
+        if (index < labelKeys.length) {
+          label.setAttribute('data-i18n', labelKeys[index]);
+        }
+      });
+
+      const sendBtn = document.querySelector('.send-btn');
+      if (sendBtn) sendBtn.setAttribute('data-i18n', 'sendBtn');
+
+      // Add placeholders to inputs
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const subjectInput = document.getElementById('subject');
+      const messageInput = document.getElementById('message');
+      
+      if (nameInput) nameInput.setAttribute('data-i18n-placeholder', 'namePlaceholder');
+      if (emailInput) emailInput.setAttribute('data-i18n-placeholder', 'emailPlaceholder');
+      if (subjectInput) subjectInput.setAttribute('data-i18n-placeholder', 'subjectPlaceholder');
+      if (messageInput) messageInput.setAttribute('data-i18n-placeholder', 'messagePlaceholder');
+
+      // Add data-i18n to contact info
+      const infoLines = document.querySelectorAll('.contact-info .info-line');
+      if (infoLines[0]) {
+        const addressSpan = infoLines[0].querySelector('strong') || infoLines[0].querySelector('span:last-child');
+        if (addressSpan) addressSpan.setAttribute('data-i18n', 'address');
+      }
+      if (infoLines[1]) {
+        const phoneSpan = infoLines[1].querySelector('span:last-child');
+        if (phoneSpan) phoneSpan.setAttribute('data-i18n', 'phone');
+      }
+      if (infoLines[2]) {
+        const emailSpan = infoLines[2].querySelector('span:last-child');
+        if (emailSpan) emailSpan.setAttribute('data-i18n', 'emailContact');
+      }
+
+      // Update footer with data-i18n
+      const footerSpans = document.querySelectorAll('.footer-links span, .footer-links a');
+      if (footerSpans[0]) footerSpans[0].setAttribute('data-i18n', 'copyright');
+      if (footerSpans[1]) footerSpans[1].setAttribute('data-i18n', 'cookies');
+      if (footerSpans[2]) footerSpans[2].setAttribute('data-i18n', 'contactFooter');
+
+      // Add IDs to search
+      const searchInput = document.querySelector('.search-bar input');
+      const searchBtn = document.querySelector('.search-bar button');
+      if (searchInput) searchInput.id = 'searchInput';
+      if (searchBtn) searchBtn.id = 'searchButton';
+
+      
+
+      // Get elements
+      const langToggleBtn = document.getElementById('langToggleBtn');
+      const langDropdown = document.getElementById('langDropdown');
+
+      // Apply translations
+      function applyLanguage(lang) {
+        const t = translations[lang] || translations.en;
+        window.currentLang = lang;
+        
+        navLinks.forEach(link => {
+          const key = link.getAttribute('data-key');
+          if (key && t[key]) link.textContent = t[key];
+        });
+
+        if (contactHeading) contactHeading.textContent = t.contactHeading;
+        
+        labels.forEach((label, index) => {
+          if (index < labelKeys.length) {
+            label.textContent = t[labelKeys[index]];
+          }
+        });
+
+        if (sendBtn) sendBtn.textContent = t.sendBtn;
+
+        // Update input placeholders
+        if (nameInput) nameInput.placeholder = t.namePlaceholder;
+        if (emailInput) emailInput.placeholder = t.emailPlaceholder;
+        if (subjectInput) subjectInput.placeholder = t.subjectPlaceholder;
+        if (messageInput) messageInput.placeholder = t.messagePlaceholder;
+
+        // Update contact info
+        if (infoLines[0]) {
+          const addressSpan = infoLines[0].querySelector('strong') || infoLines[0].querySelector('span:last-child');
+          if (addressSpan) addressSpan.textContent = t.address;
+        }
+        if (infoLines[1]) {
+          const phoneSpan = infoLines[1].querySelector('span:last-child');
+          if (phoneSpan) phoneSpan.textContent = t.phone;
+        }
+        if (infoLines[2]) {
+          const emailSpan = infoLines[2].querySelector('span:last-child');
+          if (emailSpan) emailSpan.textContent = t.emailContact;
+        }
+        
+        if (footerSpans[0]) footerSpans[0].textContent = t.copyright;
+        if (footerSpans[1]) footerSpans[1].textContent = t.cookies;
+        if (footerSpans[2]) footerSpans[2].textContent = t.contactFooter;
+        
+        if (searchInput) searchInput.placeholder = t.searchPlaceholder;
+        if (langToggleBtn) langToggleBtn.innerHTML = t.langButton;
+
+        sessionStorage.setItem('wengiLanguage', lang);
+      }
+
+      // Grey hover background
+      navLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+          this.style.backgroundColor = '#e0e0e0';
+        });
+        link.addEventListener('mouseleave', function() {
+          if (this.classList.contains('active')) {
+            this.style.backgroundColor = '#d4d4d4';
+          } else {
+            this.style.backgroundColor = '';
+          }
+        });
+      });
+
+      // Set active link background
+      const activeLink = document.querySelector('nav a.active');
+      if (activeLink) activeLink.style.backgroundColor = '#d4d4d4';
+
+      // Language dropdown toggle
+      langToggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langDropdown.style.display = langDropdown.style.display === 'none' ? 'block' : 'none';
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!langToggleBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+          langDropdown.style.display = 'none';
+        }
+      });
+
+      // Language selection
+      document.querySelectorAll('[data-lang]').forEach(item => {
+        item.addEventListener('click', (e) => {
+          const lang = item.getAttribute('data-lang');
+          applyLanguage(lang);
+          langDropdown.style.display = 'none';
+        });
+      });
+
+      // Search functionality
+      searchBtn.addEventListener('click', () => {
+        const query = searchInput.value.trim();
+        query ? alert(`Searching for: "${query}"`) : alert('Please enter a search term.');
+      });
+      
+      searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') searchBtn.click();
+      });
+
+      // Allow navigation while updating active link styling
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          navLinks.forEach(l => {
+            l.classList.remove('active');
+            l.style.backgroundColor = '';
+          });
+          this.classList.add('active');
+          this.style.backgroundColor = '#d4d4d4';
+        });
+      });
+
+    const savedLang = sessionStorage.getItem('wengiLanguage');
+if (savedLang && (savedLang === 'fr' || savedLang === 'es' || savedLang === 'en')) {
+  applyLanguage(savedLang);
+} else {
+  applyLanguage('en');
+}
+
+    })();
+  </script>
+</html>

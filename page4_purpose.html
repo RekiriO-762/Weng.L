@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weng.I – Purpose</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; background: #fff; color: #111; }
+    header { background: #111; display: flex; align-items: center; justify-content: space-between; padding: 10px 24px; }
+   /* The code design for the logo and search */
+   
+    .logo-area { display: flex; align-items: center; gap: 16px; }
+    .logo-area a:hover {text-decoration: none;}
+    .logo-img { width: 64px; height: 64px; object-fit: contain; border-radius: 4px; background: #333; }
+    .site-title { color: #fff; font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
+    .search-bar { display: flex; align-items: center; background: #fff; border-radius: 4px; overflow: hidden; }
+    .search-bar input { border: none; outline: none; padding: 6px 12px; font-size: 0.9rem; width: 180px; }
+    .search-bar button { background: #fff; border: none; padding: 6px 10px; cursor: pointer; font-size: 1rem; color: #555; }
+    .search-bar button:hover { color: #000; }
+
+    nav { background: #fff; border-bottom: 1px solid #ddd; display: flex; justify-content: center; gap: 60px; padding: 12px 0; }
+    nav a { text-decoration: none; color: #222; font-size: 0.95rem; }
+    nav a.active { font-weight: 700; }
+    nav a:hover { text-decoration: underline; }
+    
+    /* Footer design code */
+
+    footer { background: #fff; border-top: 1px solid #ddd; padding: 20px 28px; display: flex; justify-content: center; align-items: center; position:relative ; font-size: 0.82rem; color: #444; }
+    .footer-links { display: flex; flex-direction: column; gap: 4px;position: absolute;left: 50%; transform: translateX(-50%);   ; }
+    .footer-links a { color: #444; text-decoration: none; text-align: center; }
+    .footer-links a:hover { text-decoration: underline; }
+    .lang-btn-wrapper { margin-left: auto;}
+    .languages-btn { border: 1px solid #999; background: #fff; padding: 4px 14px; border-radius: 4px; font-size: 0.82rem; cursor: pointer; }
+    .ph-icon { font-size: 2rem; margin-bottom: 6px; }
+    .ph-label { font-weight: bold; font-size: 0.85rem; margin-bottom: 4px; color: #b35a00; }
+    .ph-note { font-size: 0.7rem; color: #a06000; margin-top: 4px; }
+
+    /* Image design code */
+    main { padding: 28px 28px 40px; min-height: calc(100vh - 160px); }
+    .purpose-text { font-size: 1.15rem; font-weight: 700; line-height: 1.8; text-align: center; margin-bottom: 18px; }
+    .image-row { display: flex; gap: 8px; margin-top: 20px; }
+    .image-row .img-cell { flex: 5; height: 600px; overflow: hidden; }
+    .image-row .img-cell img { width: 200%; height: 200%; object-fit: fill; display: block; }
+  
+    /* Image hover levitation effect */
+   .image-row {position: relative;}
+   .img-cell {position: relative;transition: transform 0.3s ease, box-shadow 0.3s ease;}
+   .img-cell:hover {  transform: translateY(-10px); box-shadow: 0 20px 30px rgba(0, 0, 0, 0.8);  z-index: 10;}
+
+/* Text overlay on hover */
+.img-cell::after { content:''; position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);color: white;font-size: 1.8rem;font-weight: 900;text-align: center;text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);opacity: 0;transition: opacity 0.3s ease;white-space: nowrap;z-index: 20;pointer-events: none;}
+.img-cell:first-child::after {content: 'Genetic Complications';}
+.img-cell:nth-child(2)::after {content: 'Old Age';}
+.img-cell:last-child::after {content: 'Workplace Incidents';}
+.img-cell:hover::after {opacity: 1;}
+
+/* Darken the rest of the page when hovering */
+.image-row:hover .img-cell:not(:hover) {opacity: 0.3;filter: grayscale(0.5);transition: opacity 0.3s ease, filter 0.3s ease;}
+.image-row .img-cell {transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;}
+.img-cell:hover {opacity: 1 !important; filter: grayscale(0) !important;}
+  </style>
+  
+  <!-- Language Dropdown settings -->
+  <style>
+    .lang-btn-wrapper { position: relative; display: inline-block; }
+    .lang-dropdown {
+      position: absolute;
+      bottom: 40px;
+      right: 0;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      min-width: 130px;
+      list-style: none;
+      padding: 6px 0;
+      margin: 0;
+      z-index: 1000;
+    }
+    .lang-dropdown li {
+      padding: 8px 18px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+    .lang-dropdown li:hover { background: #e9e9e9; }
+    
+  </style>
+</head>
+
+<!-- Main Code -->
+<body>
+  <header>
+    <a href="page1_home.html" style="text-decoration: none; display: flex; align-items: center; gap: 16px;">
+      <img src="Pictures-for-website-CN43000/Logo.jpg" alt="Weng.I Logo" class="logo-img">
+       <span class="site-title">Weng.I</span>
+       </a>
+    </div>
+    <div class="search-bar"><input type="text" placeholder="Search"><button>🔍</button></div>
+  </header>
+  <nav>
+    <a href="page1_home.html">Home</a>
+    <a href="page2_about.html">About Us</a>
+    <a href="page3_products.html">Products</a>
+    <a href="page4_purpose.html" class="active">Purpose</a>
+    <a href="page5_newsroom.html">Newsroom</a>
+    <a href="page6_contact.html">Contact Us</a>
+  </nav>
+  <main>
+    <p class="purpose-text">As you can see in the world around us mistakes are bound to happen, no matter what field you work in , due to either permanent limitations such as old age, changeable limitations such harrowing environments or lack of proper tools or mental health struggles. We at Weng.I (pronounced Vehng-uhl) saw this and decided to make sure these limits can be lessened and or removed so that humanity as a whole can improve, leading to change that will be for the better. To do this we plan to use AI to speed this along.</p>
+    <p class="purpose-text">We decided to do to this because we saw the inovation that AI can bring through companies such as chat gpt, Palentir etc, as we can use them to train our products so that whenever we give our products out to the public, we can make sure that all possible possibilities are accounted for so any new problems that do arise, can be adapted to and removed so that our customers can live their lives to the standard that they all humans deserve.</p>
+    <div class="image-row">
+      <div class="img-cell"> <img src="Pictures-for-website-CN43000/B-nov-16-diabetes-1.webp" alt="Bandaged limb" style="width:100%;height:100%;object-fit:fill;display:block;"></div>
+
+      <div class="img-cell"> <img src="Pictures-for-website-CN43000/cover-medium.jpg" alt="Elderly person with medication" style="width:100%;height:100%;object-fit:fill;display:block;"></div>
+      
+      <div class="img-cell"> <img src="Pictures-for-website-CN43000/engineer-worker-accident-factory-worker.jpg" alt="Worker in safety gear" style="width:100%;height:150%;object-fit:fill;display:block;"></div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-links">
+      <span>Copyright @Ehdj@Rubicon.com</span>
+      <a href="#">Cookies – In user accessibility agreement</a>
+      <span>Contact +44 7424 231374</span>
+    </div>
+    <button class="languages-btn">Languages</button>
+  </footer>
+    <script>
+    (function() {
+      'use strict';
+
+      // ---------- LANGUAGE DATA ----------
+      const translations = {
+        en: {
+          home: 'Home',
+          about: 'About Us',
+          products: 'Products',
+          purpose: 'Purpose',
+          newsroom: 'Newsroom',
+          contact: 'Contact Us',
+          purposeText1: 'As you can see in the world around us mistakes are bound to happen, no matter what field you work in, due to either permanent limitations such as old age, changeable limitations such harrowing environments or lack of proper tools or mental health struggles. We at Weng.I (pronounced Vehng-uhl) saw this and decided to make sure these limits can be lessened and or removed so that humanity as a whole can improve, leading to change that will be for the better. To do this we plan to use AI to speed this along.',
+          purposeText2: 'We decided to do to this because we saw the innovation that AI can bring through companies such as chat gpt, Palantir etc, as we can use them to train our products so that whenever we give our products out to the public, we can make sure that all possible possibilities are accounted for so any new problems that do arise, can be adapted to and removed so that our customers can live their lives to the standard that all humans deserve.',
+          copyright: 'Copyright @Ehdj@Rubicon.com',
+          cookies: 'Cookies – In user accessibility agreement',
+          contactFooter: 'Contact +44 7424 231374',
+          searchPlaceholder: 'Search',
+          langButton: ' Languages',
+          
+          
+        },
+        fr: {
+          home: 'Accueil',
+          about: 'À propos',
+          products: 'Produits',
+          purpose: 'Objectif',
+          newsroom: 'Salle de presse',
+          contact: 'Contactez-nous',
+          purposeText1: 'Comme vous pouvez le voir dans le monde qui nous entoure, les erreurs sont inévitables, quel que soit le domaine dans lequel vous travaillez, en raison de limitations permanentes telles que la vieillesse, de limitations modifiables telles que des environnements difficiles ou le manque d\'outils appropriés ou des problèmes de santé mentale. Chez Weng.I (prononcé Vehng-uhl), nous avons constaté cela et avons décidé de nous assurer que ces limites puissent être atténuées ou supprimées afin que l\'humanité dans son ensemble puisse s\'améliorer, conduisant à un changement positif. Pour ce faire, nous prévoyons d\'utiliser l\'IA pour accélérer ce processus.',
+          purposeText2: 'Nous avons décidé de le faire parce que nous avons vu l\'innovation que l\'IA peut apporter à travers des entreprises comme chat gpt, Palantir etc, car nous pouvons les utiliser pour former nos produits afin que lorsque nous les distribuons au public, nous puissions nous assurer que toutes les possibilités sont prises en compte, de sorte que tout nouveau problème qui survient puisse être adapté et résolu, permettant à nos clients de vivre leur vie selon les normes que tous les humains méritent.',
+          copyright: 'Droits d\'auteur @Ehdj@Rubicon.com',
+          cookies: 'Cookies – Accord d\'accessibilité utilisateur',
+          contactFooter: 'Contact +44 7424 231374',
+          searchPlaceholder: 'Rechercher',
+          langButton: ' Langues'
+
+          
+        },
+        es: {
+          home: 'Inicio',
+          about: 'Sobre nosotros',
+          products: 'Productos',
+          purpose: 'Propósito',
+          newsroom: 'Sala de prensa',
+          contact: 'Contáctenos',
+          purposeText1: 'Como puede ver en el mundo que nos rodea, los errores son inevitables, sin importar en qué campo trabaje, debido a limitaciones permanentes como la vejez, limitaciones modificables como entornos difíciles o falta de herramientas adecuadas o problemas de salud mental. En Weng.I (pronunciado Vehng-uhl) vimos esto y decidimos asegurarnos de que estos límites puedan reducirse o eliminarse para que la humanidad en su conjunto pueda mejorar, conduciendo a un cambio positivo. Para lograr esto, planeamos usar IA para acelerar el proceso.',
+          purposeText2: 'Decidimos hacer esto porque vimos la innovación que la IA puede aportar a través de empresas como chat gpt, Palantir, etc., ya que podemos usarlas para entrenar nuestros productos para que cuando los entreguemos al público, podamos asegurarnos de que todas las posibilidades estén contempladas, de modo que cualquier nuevo problema que surja pueda ser adaptado y eliminado, permitiendo que nuestros clientes vivan sus vidas con el estándar que todos los humanos merecen.',
+          copyright: 'Derechos de autor @Ehdj@Rubicon.com',
+          cookies: 'Cookies – Acuerdo de accesibilidad',
+          contactFooter: 'Contacto +44 7424 231374',
+          searchPlaceholder: 'Buscar',
+          langButton: ' Idiomas'
+        }
+      };
+
+      // Add data attributes to nav links
+      const navLinks = document.querySelectorAll('nav a');
+      const navKeys = ['home', 'about', 'products', 'purpose', 'newsroom', 'contact'];
+      navLinks.forEach((link, index) => {
+        if (index < navKeys.length) {
+          link.setAttribute('data-key', navKeys[index]);
+        }
+      });
+
+      // Add data-i18n attributes to purpose text
+      const purposeTexts = document.querySelectorAll('.purpose-text');
+      if (purposeTexts[0]) purposeTexts[0].setAttribute('data-i18n', 'purposeText1');
+      if (purposeTexts[1]) purposeTexts[1].setAttribute('data-i18n', 'purposeText2');
+
+      // Update footer with data-i18n
+      const footerSpans = document.querySelectorAll('.footer-links span, .footer-links a');
+      if (footerSpans[0]) footerSpans[0].setAttribute('data-i18n', 'copyright');
+      if (footerSpans[1]) footerSpans[1].setAttribute('data-i18n', 'cookies');
+      if (footerSpans[2]) footerSpans[2].setAttribute('data-i18n', 'contactFooter');
+
+      // Add IDs to search
+      const searchInput = document.querySelector('.search-bar input');
+      const searchBtn = document.querySelector('.search-bar button');
+      if (searchInput) searchInput.id = 'searchInput';
+      if (searchBtn) searchBtn.id = 'searchButton';
+
+      // Replace language button with dropdown
+      const oldLangBtn = document.querySelector('.languages-btn');
+      if (oldLangBtn) {
+        const langWrapper = document.createElement('div');
+        langWrapper.className = 'lang-btn-wrapper';
+        langWrapper.innerHTML = `
+          <button class="languages-btn" id="langToggleBtn"> Languages</button>
+          <ul class="lang-dropdown" id="langDropdown" style="display: none;">
+            <li data-lang="en">🇬🇧 English</li>
+            <li data-lang="fr">🇫🇷 Français</li>
+            <li data-lang="es">🇪🇸 Español</li>
+          </ul>
+        `;
+        oldLangBtn.parentNode.replaceChild(langWrapper, oldLangBtn);
+      }
+
+      
+      const langToggleBtn = document.getElementById('langToggleBtn');
+      const langDropdown = document.getElementById('langDropdown');
+      
+      let currentLang = 'en';
+
+      // Apply translations
+      function applyLanguage(lang) {
+        const t = translations[lang] || translations.en;
+        
+        navLinks.forEach(link => {
+          const key = link.getAttribute('data-key');
+          if (key && t[key]) link.textContent = t[key];
+        });
+
+        if (purposeTexts[0]) purposeTexts[0].textContent = t.purposeText1;
+        if (purposeTexts[1]) purposeTexts[1].textContent = t.purposeText2;
+        
+        if (footerSpans[0]) footerSpans[0].textContent = t.copyright;
+        if (footerSpans[1]) footerSpans[1].textContent = t.cookies;
+        if (footerSpans[2]) footerSpans[2].textContent = t.contactFooter;
+        
+        if (searchInput) searchInput.placeholder = t.searchPlaceholder;
+        if (langToggleBtn) langToggleBtn.innerHTML = t.langButton;
+
+        currentLang = lang;
+        sessionStorage.setItem('wengiLanguage', lang);
+      }
+
+      // Grey hover background
+      navLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+          this.style.backgroundColor = '#e0e0e0';
+        });
+        link.addEventListener('mouseleave', function() {
+          if (this.classList.contains('active')) {
+            this.style.backgroundColor = '#d4d4d4';
+          } else {
+            this.style.backgroundColor = '';
+          }
+        });
+      });
+
+      // Set active link background
+      const activeLink = document.querySelector('nav a.active');
+      if (activeLink) activeLink.style.backgroundColor = '#d4d4d4';
+
+      // Language dropdown toggle
+      langToggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langDropdown.style.display = langDropdown.style.display === 'none' ? 'block' : 'none';
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!langToggleBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+          langDropdown.style.display = 'none';
+        }
+      });
+
+      // Language selection
+      document.querySelectorAll('[data-lang]').forEach(item => {
+        item.addEventListener('click', (e) => {
+          const lang = item.getAttribute('data-lang');
+          applyLanguage(lang);
+          langDropdown.style.display = 'none';
+        });
+      });
+
+      // Search functionality
+      searchBtn.addEventListener('click', () => {
+        const query = searchInput.value.trim();
+        query ? alert(`Searching for: "${query}"`) : alert('Please enter a search term.');
+      });
+      
+      searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') searchBtn.click();
+      });
+
+      // Allow navigation while updating active link styling
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          navLinks.forEach(l => {
+            l.classList.remove('active');
+            l.style.backgroundColor = '';
+          });
+          this.classList.add('active');
+          this.style.backgroundColor = '#d4d4d4';
+        });
+      });
+
+      const savedLang = sessionStorage.getItem('wengiLanguage');
+if (savedLang && (savedLang === 'fr' || savedLang === 'es' || savedLang === 'en')) {
+  applyLanguage(savedLang);
+} else {
+  applyLanguage('en');
+}
+
+    })();
+  </script>
+</body>
+</html>

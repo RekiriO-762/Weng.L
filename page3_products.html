@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weng.I – Products</title>
+  <style>
+    /* The settings are the same as page one with changes for structure and such */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; background: #fff; color: #111; }
+    header { background: #111; display: flex; align-items: center; justify-content: space-between; padding: 10px 24px ; }
+    /* The settings for the logo and search */
+
+    .logo-area { display: flex; align-items: center; gap: 16px; }
+    .logo-img { width: 64px; height: 64px; object-fit: contain; border-radius: 4px; background: #333; }
+    .logo-area a:hover {text-decoration: none;}
+
+    .site-title { color: #fff; font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
+    .search-bar { display: flex; align-items: center; background: #fff; border-radius: 4px; overflow: hidden; }
+    .search-bar input { border: none; outline: none; padding: 6px 12px; font-size: 0.9rem; width: 180px; }
+    .search-bar button { background: #fff; border: none; padding: 6px 10px; cursor: pointer; font-size: 1rem; color: #555; }
+    .search-bar button:hover { color: #000; }
+    nav { background: #fff; border-bottom: 1px solid #ddd; display: flex; justify-content: center; gap: 60px; padding: 12px 0; }
+    nav a { text-decoration: none; color: #222; font-size: 0.95rem; }
+    nav a.active { font-weight: 700; }
+    nav a:hover { text-decoration: underline; }
+    /* Footer design code */
+
+    footer { background: #fff; border-top: 1px solid #ddd; padding: 20px 28px; display: flex; justify-content: center; align-items: center; position:relative ; font-size: 0.82rem; color: #444; }
+    .footer-links { display: flex; flex-direction: column; gap: 3.5px; position: absolute;left: 50%; transform: translateX(-50%);   ; }
+    .footer-links a { color: #444; text-decoration: none; text-align: center; }
+    .footer-links a:hover { text-decoration: underline; }
+    .lang-btn-wrapper { margin-left: auto;}
+    .languages-btn { border: 1px solid #999; background: #fff; padding: 4px 14px; border-radius: 4px; font-size: 0.82rem; cursor: pointer; }
+    .ph-icon { font-size: 2rem; margin-bottom: 6px; }
+    .ph-label { font-weight: bold; font-size: 0.85rem; margin-bottom: 4px; color: #b35a00; }
+    .ph-note { font-size: 0.7rem; color: #a06000; margin-top: 4px; }
+  
+    /* Background and image design code*/
+
+    body { background: #111; }
+    main { background: #111; padding: 20px; min-height: calc(100vh - 200px); }
+    .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-bottom: 20px; }
+    .product-item { position: relative; }
+    .product-img-wrap { width: 100%; height: 280px; overflow: hidden; }
+    .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .product-caption { background: #111; color: #fff; font-weight: 700; font-size: 0.85rem; padding: 6px 6px 10px; line-height: 1.3; }
+    .bottom-text { background: #fff; color: #111; padding: 16px 20px; font-size: 1.1rem; font-weight: 700; text-align: center; line-height: 2.1; }
+  .product-caption { background: #111; color: #fff; font-weight: 700; font-size: 0.85rem; padding: 6px 6px 10px; line-height: 1.3; }
+    .bottom-text { background: #fff; color: #111; padding: 16px 20px; font-size: 1.1rem; font-weight: 700; text-align: center; line-height: 2.1; }
+    
+    /* Image hover levitation effect */
+.product-item {transition: transform 0.3s ease, box-shadow 0.3s ease;z-index: 1;}
+
+.product-item:hover { transform: translateY(-10px); box-shadow: 0 20px 30px rgba(0, 0, 0, 0.8); z-index: 100;}
+
+/* Darken the rest of the page when hovering */
+
+.product-grid { position: relative;}
+.product-grid:hover .product-item:not(:hover) { opacity: 0.2; filter: grayscale(0.5);transition: opacity 0.3s ease, filter 0.3s ease;}
+.product-grid .product-item { transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;}
+.product-item:hover {opacity: 1 !important;filter: grayscale(0) !important;}
+main:has(.product-item:hover)
+main:has(.product-item:hover) .bottom-text {opacity: 0.3;transition: opacity 0.3s ease;}
+
+/* Keep the hovered item fully visible */
+
+.product-item:hover .product-caption { background: #000; color: #fff}
+  </style>
+  
+  <!-- Language settings -->
+  <style>
+    .lang-btn-wrapper { position: relative; display: inline-block; }
+    .lang-dropdown {
+      position: absolute;
+      bottom: 40px;
+      right: 0;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      min-width: 130px;
+      list-style: none;
+      padding: 6px 0;
+      margin: 0;
+      z-index: 1000;
+    }
+    .lang-dropdown li {
+      padding: 8px 18px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+    .lang-dropdown li:hover { background: #e9e9e9; }
+    
+  </style>
+</head>
+<body>
+ 
+  <!-- Main Code -->
+  <header>
+    <div class="logo-area">
+      <a href="page1_home.html" style="text-decoration: none; display: flex; align-items: center; gap: 16px;">
+      <img src="Pictures-for-website-CN43000/Logo.jpg" alt="Weng.I Logo" class="logo-img">
+       <span class="site-title">Weng.I</span>
+       </a>
+    </div>
+    <div class="search-bar"><input type="text" placeholder="Search"><button>🔍</button></div>
+  </header>
+  <nav>
+    <a href="page1_home.html">Home</a>
+    <a href="page2_about.html">About Us</a>
+    <a href="page3_products.html" class="active">Products</a>
+    <a href="page4_purpose.html">Purpose</a>
+    <a href="page5_newsroom.html">Newsroom</a>
+    <a href="page6_contact.html">Contact Us</a>
+  </nav>
+ 
+  <!-- Pictures for the page linked below -->
+  <main>
+    <div class="product-grid">
+      <div class="product-item">
+        <div class="product-img-wrap"> <img src="Pictures-for-website-CN43000/21robotica1-superJumbo.jpg" alt="Full Bionic Attachments" style="width:100%;height:100%;object-fit:fill;display:block;"></div>
+        <div class="product-caption">Full Bionic Attachments</div>
+      </div>
+      <div class="product-item">
+        <div class="product-img-wrap"> <img src="Pictures-for-website-CN43000/bigstock-robotic-vacuum-cleaner-on-lami-194966764.jpg" alt="AI Assisted Appliances" style="width:100%;height:100%;object-fit:fill;display:block;"></div>
+        <div class="product-caption">Ai assistaned appliances</div>
+      </div>
+      <div class="product-item">
+        <div class="product-img-wrap"> <img src="Pictures-for-website-CN43000/bionic-arm-lab-3-courtesy-cleveland-clinic.webp" alt="Partial Bionic Attachments" style="width:100%;height:100%;object-fit:fill;display:block;"></div>
+        <div class="product-caption">Partial Bionic Attachments</div>
+      </div>
+      <div class="product-item">
+        <div class="product-img-wrap"> <img src="Pictures-for-website-CN43000/microchip3.jpeg" alt="Partial Bionic Attachments - Eye" style="width:100%;height:100%;object-fit:fill;display:block;"></div>
+        <div class="product-caption">Partial Bionic Attachments</div>
+      </div>
+      <div class="product-item">
+        <div class="product-img-wrap"> <img src="Pictures-for-website-CN43000/Tablet-showing-heart-test-result.jpg" alt="Medical-Equipment" style="width:100%;height:100%;object-fit:fill;display:block;"></div>
+        <div class="product-caption">Medical Equipment</div>
+      </div>
+      <div class="product-item">
+        <div class="product-img-wrap"> <img src="Pictures-for-website-CN43000/Medical-Devices-1024x684-1.jpeg" alt="Surgical Equipment" style="width:100%;height:100%;object-fit:fill;display:block;"></div>
+        <div class="product-caption">Surgical Equipment</div>
+      </div>
+
+      <div class="product-item">
+  <div class="product-img-wrap"> <img src="Pictures-for-website-CN43000/X-Ray.jpg" alt="X-Ray Capabilities" >
+  </div>
+  <div class="product-caption">X-Ray Capabilities</div>
+</div>
+      
+      <div class="product-item">
+  <div class="product-img-wrap"> <img src="Pictures-for-website-CN43000/Heart.jpg" alt="Improved Heart Replacements">
+  </div>
+  <div class="product-caption">Improved Heart Replacements</div>
+</div>>
+
+    </div>
+    <div class="bottom-text">
+      As you can see above, we have many ways that our technology can be used to improve the world as we know to new heights, as robotics will be improved by humanity to a degree unheard of and with the help of AI, we believe we can take tech as a whole further than ever thought possible before, so procedures that may be risky today become common place tommorow.
+    </div>
+
+  </main>
+  <footer>
+    <div class="footer-links">
+      <span>Copyright @Ehdj@Rubicon.com</span>
+      <a href="#">Cookies – In user accessibility agreement</a>
+      <span>Contact +44 7424 231374</span>
+    </div>
+    <button class="languages-btn">Languages</button>
+  </footer>
+  <script>
+    (function() {
+      'use strict';
+
+      // ---------- LANGUAGE DATA ----------
+      const translations = {
+        en: {
+          home: 'Home',
+          about: 'About Us',
+          products: 'Products',
+          purpose: 'Purpose',
+          newsroom: 'Newsroom',
+          contact: 'Contact Us',
+          product1: 'Full Bionic Attachments',
+          product2: 'AI Assisted Appliances',
+          product3: 'Partial Bionic Attachments',
+          product4: 'Partial Bionic Attachments',
+          product5: 'Medical Equipment',
+          product6: 'Surgical Equipment',
+          product7: 'X-Ray Capabilities',
+          product8: 'Improved Heart Replacements',
+          bottomText: 'As you can see above, we have many ways that our technology can be used to improve the world as we know to new heights, as robotics will be improved by humanity to a degree unheard of and with the help of AI, we believe we can take tech as a whole further than ever thought possible before, so procedures that may be risky today become common place tommorow.',
+          copyright: 'Copyright @Ehdj@Rubicon.com',
+          cookies: 'Cookies – In user accessibility agreement',
+          contactFooter: 'Contact +44 7424 231374',
+          searchPlaceholder: 'Search',
+          langButton: ' Languages'
+        },
+        fr: {
+          home: 'Accueil',
+          about: 'À propos',
+          products: 'Produits',
+          purpose: 'Objectif',
+          newsroom: 'Salle de presse',
+          contact: 'Contactez-nous',
+          product1: 'Prothèses Bioniques Complètes',
+          product2: 'Appareils Assistés par IA',
+          product3: 'Prothèses Bioniques Partielles',
+          product4: 'Prothèses Bioniques Partielles',
+          product5: 'Équipement Médical',
+          product6: 'Équipement Chirurgical',
+          product7: 'Capacités de Radiographie',
+          product8: 'Remplacements Cardiaques Améliorés',
+          bottomText: 'Comme vous pouvez le constater ci-dessus, nous disposons de nombreux moyens pour utiliser notre technologie afin d\'améliorer le monde tel que nous le connaissons et d\'atteindre de nouveaux sommets. La robotique sera perfectionnée par l\'humanité à un degré inédit et, grâce à l\'IA, nous pensons pouvoir repousser les limites de la technologie dans son ensemble, bien au-delà de ce que nous avions imaginé jusqu\'à présent. Ainsi, des procédures potentiellement risquées aujourd\'hui deviendront courantes demain.',
+          copyright: 'Droits d\'auteur @Ehdj@Rubicon.com',
+          cookies: 'Cookies – Accord d\'accessibilité utilisateur',
+          contactFooter: 'Contact +44 7424 231374',
+          searchPlaceholder: 'Rechercher',
+          langButton: ' Langues'
+        },
+        es: {
+          home: 'Inicio',
+          about: 'Sobre nosotros',
+          products: 'Productos',
+          purpose: 'Propósito',
+          newsroom: 'Sala de prensa',
+          contact: 'Contáctenos',
+          product1: 'Prótesis Biónicas Completas',
+          product2: 'Electrodomésticos Asistidos por IA',
+          product3: 'Prótesis Biónicas Parciales',
+          product4: 'Prótesis Biónicas Parciales',
+          product5: 'Equipo Médico',
+          product6: 'Equipo Quirúrgico',
+          product7: 'Capacidades de Rayos X',
+          product8: 'Reemplazos Cardíacos Mejorados',
+          bottomText: 'Como se puede observar, nuestra tecnología tiene muchas aplicaciones para llevar el mundo a nuevas cotas, ya que la humanidad perfeccionará la robótica hasta un nivel nunca antes visto. Con la ayuda de la IA, creemos que podemos llevar la tecnología en su conjunto más allá de lo que se creía posible, de modo que los procedimientos que hoy pueden ser arriesgados se conviertan en algo habitual mañana.',
+          copyright: 'Derechos de autor @Ehdj@Rubicon.com',
+          cookies: 'Cookies – Acuerdo de accesibilidad',
+          contactFooter: 'Contacto +44 7424 231374',
+          searchPlaceholder: 'Buscar',
+          langButton: ' Idiomas'
+        }
+      };
+
+      // Add data attributes to nav links
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks[0].setAttribute('data-key', 'home');
+      navLinks[1].setAttribute('data-key', 'about');
+      navLinks[2].setAttribute('data-key', 'products');
+      navLinks[3].setAttribute('data-key', 'purpose');
+      navLinks[4].setAttribute('data-key', 'newsroom');
+      navLinks[5].setAttribute('data-key', 'contact');
+
+      // Add data-i18n attributes to product captions
+      const captions = document.querySelectorAll('.product-caption');
+      const captionKeys = ['product1', 'product2', 'product3', 'product4', 'product5', 'product6', 'product7', 'product8'];
+      captions.forEach((caption, index) => {
+        if (index < captionKeys.length) {
+          caption.setAttribute('data-i18n', captionKeys[index]);
+        }
+      });
+
+      // Add data-i18n to bottom text
+      const bottomText = document.querySelector('.bottom-text');
+      if (bottomText) bottomText.setAttribute('data-i18n', 'bottomText');
+
+      // Update footer with data-i18n
+      const footerSpans = document.querySelectorAll('.footer-links span, .footer-links a');
+      if (footerSpans[0]) footerSpans[0].setAttribute('data-i18n', 'copyright');
+      if (footerSpans[1]) footerSpans[1].setAttribute('data-i18n', 'cookies');
+      if (footerSpans[2]) footerSpans[2].setAttribute('data-i18n', 'contactFooter');
+
+      // Add IDs to search
+      const searchInput = document.querySelector('.search-bar input');
+      const searchBtn = document.querySelector('.search-bar button');
+      if (searchInput) searchInput.id = 'searchInput';
+      if (searchBtn) searchBtn.id = 'searchButton';
+
+      // Replace old language button with dropdown
+      const oldLangBtn = document.querySelector('.languages-btn');
+      if (oldLangBtn) {
+        const langWrapper = document.createElement('div');
+        langWrapper.className = 'lang-btn-wrapper';
+        langWrapper.innerHTML = `
+          <button class="languages-btn" id="langToggleBtn"> Languages</button>
+          <ul class="lang-dropdown" id="langDropdown" style="display: none;">
+            <li data-lang="en">🇬🇧 English</li>
+            <li data-lang="fr">🇫🇷 Français</li>
+            <li data-lang="es">🇪🇸 Español</li>
+          </ul>
+        `;
+        oldLangBtn.parentNode.replaceChild(langWrapper, oldLangBtn);
+      }
+
+      
+      const langToggleBtn = document.getElementById('langToggleBtn');
+      const langDropdown = document.getElementById('langDropdown');
+      
+      // Base Language
+      let currentLang = 'en';
+
+      // Apply translations
+      function applyLanguage(lang) {
+        const t = translations[lang] || translations.en;
+        
+        navLinks.forEach(link => {
+          const key = link.getAttribute('data-key');
+          if (key && t[key]) link.textContent = t[key];
+        });
+
+        captions.forEach((caption, index) => {
+          if (index < captionKeys.length) {
+            caption.textContent = t[captionKeys[index]];
+          }
+        });
+
+        if (bottomText) bottomText.textContent = t.bottomText;
+        
+        if (footerSpans[0]) footerSpans[0].textContent = t.copyright;
+        if (footerSpans[1]) footerSpans[1].textContent = t.cookies;
+        if (footerSpans[2]) footerSpans[2].textContent = t.contactFooter;
+        
+        if (searchInput) searchInput.placeholder = t.searchPlaceholder;
+        if (langToggleBtn) langToggleBtn.innerHTML = t.langButton;
+
+        currentLang = lang;
+        sessionStorage.setItem('wengiLanguage', lang);
+      }
+
+      // Grey hover background
+      navLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+          this.style.backgroundColor = '#e0e0e0';
+        });
+        link.addEventListener('mouseleave', function() {
+          if (this.classList.contains('active')) {
+            this.style.backgroundColor = '#d4d4d4';
+          } else {
+            this.style.backgroundColor = '';
+          }
+        });
+      });
+
+      const activeLink = document.querySelector('nav a.active');
+      if (activeLink) activeLink.style.backgroundColor = '#d4d4d4';
+
+      // Language dropdown toggle
+      langToggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langDropdown.style.display = langDropdown.style.display === 'none' ? 'block' : 'none';
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!langToggleBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+          langDropdown.style.display = 'none';
+        }
+      });
+
+      // Language selection
+      document.querySelectorAll('[data-lang]').forEach(item => {
+        item.addEventListener('click', (e) => {
+          const lang = item.getAttribute('data-lang');
+          applyLanguage(lang);
+          langDropdown.style.display = 'none';
+        });
+      });
+
+      // Search
+      searchBtn.addEventListener('click', () => {
+        const query = searchInput.value.trim();
+        query ? alert(`Searching for: "${query}"`) : alert('Please enter a search term.');
+      });
+      
+      searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') searchBtn.click();
+      });
+
+    
+
+      const savedLang = sessionStorage.getItem('wengiLanguage');
+if (savedLang && (savedLang === 'fr' || savedLang === 'es' || savedLang === 'en')) {
+  applyLanguage(savedLang);
+} else {
+  applyLanguage('en');
+}
+
+    })();
+  </script>
+</body>
+</html>
