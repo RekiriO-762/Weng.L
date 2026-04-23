@@ -2,7 +2,6 @@
 <html lang="en">
   <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<head>
   <meta charset="UTF-8">
   <title>Weng.I – Home</title>
   <style>
@@ -53,62 +52,33 @@
     
   
     /* Fade-in animation for the page*/
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+@keyframes fadeInUp { 0% {opacity: 0;  transform: translateY(30px);}
+  100% { opacity: 1;  transform: translateY(0); } }
 
-.page-title-banner {
-  animation: fadeInUp 0.8s ease-out;
-}
+.page-title-banner { animation: fadeInUp 0.8s ease-out;}
 
 /* Pulse animation for the middle black title */
-@keyframes subtlePulse {
-  0%, 100% {
-    background: #000;
-  }
-  50% {
-    background: #1a1a1a;
-  }
-}
+@keyframes subtlePulse { 0%, 100% { background: #000; }
+ 50% { background: #1a1a1a; } }
 
-.top-cell[style*="background:#000"] {
-  animation: subtlePulse 4s infinite ease-in-out;
-}
+.top-cell[style*="background:#000"] { animation: subtlePulse 4s infinite ease-in-out; }
 
 /* Image zoom-on-load animation */
-@keyframes zoomIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+@keyframes zoomIn { 0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); } }
 
-.top-cell img, .bottom-cell img {
-  animation: zoomIn 1s ease-out;
-}
+.top-cell img, .bottom-cell img { animation: zoomIn 1s ease-out; }
+  
   </style>
   <style>
    
    /* The settings for the language dropdown */
-    footer {
-      position: relative;
-    }
-    .lang-btn-wrapper {
-      position: relative;
-    }
+    footer { position: relative;  }
+   
+    .lang-btn-wrapper { position: relative; }
+   
     .lang-dropdown {
-      position: absolute;
+     position: absolute;
       bottom: 40px;  
       right: 0;
       background: white;
@@ -126,12 +96,9 @@
       font-size: 0.95rem;
       white-space: nowrap;
     }
-    .lang-dropdown li:hover {
-      background: #e9e9e9;
-    }
-    .languages-btn {
-      font-weight: 500;
-    }
+    .lang-dropdown li:hover { background: #e9e9e9; }
+    
+    .languages-btn {font-weight: 500; }
 
     .lang-dropdown {
       position: absolute;
@@ -199,7 +166,7 @@
 
     <div class="page-title-banner" data-i18n="futureRobotics">The Future of Robotics</div>
     <div class="bottom-image-row">
-      <div class="bottom-cell"> <img src="Pictures-for-website-CN43000/4466_800x448_article-animation.webp"  alt="/4466_800x448_article-animation" style="width:100%;height:150%;object-fit:fill;display:block;"></div>
+      <div class="bottom-cell"> <img src="Pictures-for-website-CN43000/4466_800x448_article-animation.webp" alt="/4466_800x448_article-animation" style="width:100%;height:150%;object-fit:fill;display:block;"></div>
       <div class="bottom-cell"> <img src="Pictures-for-website-CN43000/Figure01.gif" alt="man arm-wrestling a robot" style="width:100%;height:100%;display:block;"></div>
     </div>
   </main>
