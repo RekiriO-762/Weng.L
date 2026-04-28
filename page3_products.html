@@ -4,18 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weng.I – Products</title>
+  
+  <!-- As you can see below the CSS is held in style instead of a separate file due to being easier to manage -->
+
   <style>
-    /* The settings are the same as page one with changes for structure and such */
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Georgia', serif; background: #fff; color: #111; }
     header { background: #111; display: flex; align-items: center; justify-content: space-between; padding: 10px 24px ; }
+
     /* The settings for the logo and search */
 
     .logo-area { display: flex; align-items: center; gap: 16px; }
     .logo-img { width: 64px; height: 64px; object-fit: contain; border-radius: 4px; background: #333; }
     .logo-area a:hover {text-decoration: none;}
 
+     /* Navigation will have it design code as below */
+     
     .site-title { color: #fff; font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
     .search-bar { display: flex; align-items: center; background: #fff; border-radius: 4px; overflow: hidden; }
     .search-bar input { border: none; outline: none; padding: 6px 12px; font-size: 0.9rem; width: 180px; }
@@ -25,6 +30,7 @@
     nav a { text-decoration: none; color: #222; font-size: 0.95rem; }
     nav a.active { font-weight: 700; }
     nav a:hover { text-decoration: underline; }
+   
     /* Footer design code */
 
     footer { background: #fff; border-top: 1px solid #ddd; padding: 20px 28px; display: flex; justify-content: center; align-items: center; position:relative ; font-size: 0.82rem; color: #444; }
@@ -47,30 +53,31 @@
     .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .product-caption { background: #111; color: #fff; font-weight: 700; font-size: 0.85rem; padding: 6px 6px 10px; line-height: 1.3; }
     .bottom-text { background: #fff; color: #111; padding: 16px 20px; font-size: 1.1rem; font-weight: 700; text-align: center; line-height: 2.1; }
-  .product-caption { background: #111; color: #fff; font-weight: 700; font-size: 0.85rem; padding: 6px 6px 10px; line-height: 1.3; }
+    .product-caption { background: #111; color: #fff; font-weight: 700; font-size: 0.85rem; padding: 6px 6px 10px; line-height: 1.3; }
     .bottom-text { background: #fff; color: #111; padding: 16px 20px; font-size: 1.1rem; font-weight: 700; text-align: center; line-height: 2.1; }
     
     /* Image hover levitation effect */
-.product-item {transition: transform 0.3s ease, box-shadow 0.3s ease;z-index: 1;}
+    .product-item {transition: transform 0.3s ease, box-shadow 0.3s ease;z-index: 1;}
 
-.product-item:hover { transform: translateY(-10px); box-shadow: 0 20px 30px rgba(0, 0, 0, 0.8); z-index: 100;}
+    .product-item:hover { transform: translateY(-10px); box-shadow: 0 20px 30px rgba(0, 0, 0, 0.8); z-index: 100;}
 
-/* Darken the rest of the page when hovering */
+    /* Darken the rest of the page when hovering */
 
-.product-grid { position: relative;}
-.product-grid:hover .product-item:not(:hover) { opacity: 0.2; filter: grayscale(0.5);transition: opacity 0.3s ease, filter 0.3s ease;}
-.product-grid .product-item { transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;}
-.product-item:hover {opacity: 1 !important;filter: grayscale(0) !important;}
-main:has(.product-item:hover)
-main:has(.product-item:hover) .bottom-text {opacity: 0.3;transition: opacity 0.3s ease;}
+    .product-grid { position: relative;}
+    .product-grid:hover .product-item:not(:hover) { opacity: 0.2; filter: grayscale(0.5);transition: opacity 0.3s ease, filter 0.3s ease;}
+    .product-grid .product-item { transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;}
+    .product-item:hover {opacity: 1 !important;filter: grayscale(0) !important;}
+    main:has(.product-item:hover)
+    main:has(.product-item:hover) .bottom-text {opacity: 0.3;transition: opacity 0.3s ease;}
 
-/* Keep the hovered item fully visible */
+    /* Keep the hovered item fully visible */
 
-.product-item:hover .product-caption { background: #000; color: #fff}
+   .product-item:hover .product-caption { background: #000; color: #fff}
   </style>
   
   <!-- Language settings -->
   <style>
+
     .lang-btn-wrapper { position: relative; display: inline-block; }
     .lang-dropdown {
       position: absolute;
@@ -95,67 +102,83 @@ main:has(.product-item:hover) .bottom-text {opacity: 0.3;transition: opacity 0.3
     .lang-dropdown li:hover { background: #e9e9e9; }
     
   </style>
+
 </head>
 <body>
  
   <!-- Main Code -->
+
   <header>
+
     <div class="logo-area">
       <a href="page1_home.html" style="text-decoration: none; display: flex; align-items: center; gap: 16px;">
       <img src="Pictures-for-website-CN43000/Logo.jpg" alt="Weng.I Logo" class="logo-img">
        <span class="site-title">Weng.I</span>
        </a>
-    </div>
+    
+      </div>
+
     <div class="search-bar"><input type="text" placeholder="Search"><button>🔍</button></div>
+  
   </header>
   <nav>
+
     <a href="page1_home.html">Home</a>
     <a href="page2_about.html">About Us</a>
     <a href="page3_products.html" class="active">Products</a>
     <a href="page4_purpose.html">Purpose</a>
     <a href="page5_newsroom.html">Newsroom</a>
     <a href="page6_contact.html">Contact Us</a>
+  
   </nav>
  
   <!-- Pictures for the page linked below -->
   <main>
+
     <div class="product-grid">
       <div class="product-item">
+
         <div class="product-img-wrap"> <img src="Pictures-for-website-CN43000/21robotica1-superJumbo.jpg" alt="Full Bionic Attachments" style="width:100%;height:100%;object-fit:fill;display:block;"></div>
         <div class="product-caption">Full Bionic Attachments</div>
       </div>
+
       <div class="product-item">
         <div class="product-img-wrap"> <img src="Pictures-for-website-CN43000/bigstock-robotic-vacuum-cleaner-on-lami-194966764.jpg" alt="AI Assisted Appliances" style="width:100%;height:100%;object-fit:fill;display:block;"></div>
         <div class="product-caption">Ai assistaned appliances</div>
       </div>
+
       <div class="product-item">
         <div class="product-img-wrap"> <img src="Pictures-for-website-CN43000/bionic-arm-lab-3-courtesy-cleveland-clinic.webp" alt="Partial Bionic Attachments" style="width:100%;height:100%;object-fit:fill;display:block;"></div>
         <div class="product-caption">Partial Bionic Attachments</div>
       </div>
+
       <div class="product-item">
         <div class="product-img-wrap"> <img src="Pictures-for-website-CN43000/microchip3.jpeg" alt="Partial Bionic Attachments - Eye" style="width:100%;height:100%;object-fit:fill;display:block;"></div>
         <div class="product-caption">Partial Bionic Attachments</div>
       </div>
+
       <div class="product-item">
         <div class="product-img-wrap"> <img src="Pictures-for-website-CN43000/Tablet-showing-heart-test-result.jpg" alt="Medical-Equipment" style="width:100%;height:100%;object-fit:fill;display:block;"></div>
         <div class="product-caption">Medical Equipment</div>
       </div>
+
       <div class="product-item">
         <div class="product-img-wrap"> <img src="Pictures-for-website-CN43000/Medical-Devices-1024x684-1.jpeg" alt="Surgical Equipment" style="width:100%;height:100%;object-fit:fill;display:block;"></div>
         <div class="product-caption">Surgical Equipment</div>
       </div>
 
+
       <div class="product-item">
   <div class="product-img-wrap"> <img src="Pictures-for-website-CN43000/X-Ray.jpg" alt="X-Ray Capabilities" >
   </div>
   <div class="product-caption">X-Ray Capabilities</div>
-</div>
+    </div>
       
       <div class="product-item">
   <div class="product-img-wrap"> <img src="Pictures-for-website-CN43000/Heart.jpg" alt="Improved Heart Replacements">
   </div>
   <div class="product-caption">Improved Heart Replacements</div>
-</div>>
+    </div>>
 
     </div>
     <div class="bottom-text">
@@ -163,15 +186,25 @@ main:has(.product-item:hover) .bottom-text {opacity: 0.3;transition: opacity 0.3
     </div>
 
   </main>
+
   <footer>
+
     <div class="footer-links">
       <span>Copyright @Ehdj@Rubicon.com</span>
       <a href="#">Cookies – In user accessibility agreement</a>
       <span>Contact +44 7424 231374</span>
     </div>
+
+
     <button class="languages-btn">Languages</button>
+
   </footer>
+
   <script>
+    
+    // The language changes and such will require java script, as such they have been put here//
+    // Data regarding French and Spanish will be linked to data-i18 so that the website knows what it wants to be translated//
+    
     (function() {
       'use strict';
 
@@ -389,5 +422,6 @@ if (savedLang && (savedLang === 'fr' || savedLang === 'es' || savedLang === 'en'
 
     })();
   </script>
+  
 </body>
 </html>
