@@ -4,10 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weng.I – About Us</title>
+  
+  <!-- As you can see below the CSS is held in style instead of a separate file due to being easier to manage -->
+
   <style>
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Georgia', serif; background: #dadada; color: #111; }
     header { background: #111; display: flex; align-items: center; justify-content: space-between; padding: 10px 24px ; }
+    
     /* The code for the logo and search will go below */
 
     .logo-area { display: flex; align-items: center; gap: 16px; }
@@ -19,12 +24,15 @@
     .search-bar button { background: #fff; border: none; padding: 6px 10px; cursor: pointer; font-size: 1rem; color: #555; }
     .search-bar button:hover { color: #000; }
    
-    /* Navigation such as the search bar will have it design code as below */
+    /* Navigation will have it design code as below */
 
     nav { background: #fff; border-bottom: 1px solid #ddd; display: flex; justify-content: center; gap: 60px; padding: 12px 0; }
     nav a { text-decoration: none; color: #222; font-size: 0.95rem; }
     nav a.active { font-weight: 700; }
     nav a:hover { text-decoration: underline; }
+    
+    /* The design code for the footer and languages are put here */
+
      footer { background: #fff; border-top: 1px solid #ddd; padding: 20px 28px; display: flex; justify-content: center; align-items: center; position:relative ; font-size: 0.82rem; color: #444; }
     .footer-links { display: flex; flex-direction: column; gap: 4px;position: absolute;left: 50%; transform: translateX(-50%);   ; }
     .footer-links a { color: #444; text-decoration: none; text-align: center; }
@@ -36,7 +44,8 @@
     .ph-note { font-size: 0.7rem; color: #a06000; margin-top: 4px; }
 
 
-/*The design code for the main pages images will all be set to certain ratios so that they will not go over each other or spill over the edges of the page */
+    /*The design code for the main pages images will all be set to certain ratios so that they will not go over each other or spill over the edges of the page */
+
     main { min-height: calc(100vh - 160px); }
     .page-headline { font-size: 1.9rem; font-weight: 900; text-align: center; padding: 14px 16px 10px; border-bottom: 1px solid #ffffff;background-color: #ffffff }
     .content-row { display: flex; align-items: stretch; }
@@ -114,12 +123,16 @@
       position: relative;
       display: inline-block;
     }
+
   </style>
+
 </head>
+
 <body>
   
   <!-- Main Code -->
   <header>
+
     <div class="logo-area">
        <a href="page1_home.html" style="text-decoration: none; display: flex; align-items: center; gap: 16px;">
       <img src="Pictures-for-website-CN43000/Logo.jpg" alt="Weng.I Logo" class="logo-img">
@@ -127,14 +140,17 @@
        </a>
     </div>
     <div class="search-bar"><input type="text" placeholder="Search" id="searchInput"><button id="searchButton">🔍</button></div>
+  
   </header>
   <nav>
+
     <a href="page1_home.html" data-key="home">Home</a>
-<a href="page2_about.html" class="active" data-key="about">About Us</a>
-<a href="page3_products.html" data-key="products">Products</a>
-<a href="page4_purpose.html" data-key="purpose">Purpose</a>
-<a href="page5_newsroom.html" data-key="newsroom">Newsroom</a>
-<a href="page6_contact.html" data-key="contact">Contact Us</a>
+    <a href="page2_about.html" class="active" data-key="about">About Us</a>
+    <a href="page3_products.html" data-key="products">Products</a>
+    <a href="page4_purpose.html" data-key="purpose">Purpose</a>
+    <a href="page5_newsroom.html" data-key="newsroom">Newsroom</a>
+    <a href="page6_contact.html" data-key="contact">Contact Us</a>
+  
   </nav>
   <main>
     <div class="page-headline" data-i18n="aboutHeadline">The future of robotics is not about replacing Humans but augmenting them</div>
@@ -144,87 +160,97 @@
   <p data-i18n="aboutPara1" style="margin-bottom: 30px;">With the advancement of knowledge in the technology sector and the rise of AI in the public eye at Weng.I, we believe that through the combination of AI and Robotics we can improve the lives of all on Earth, for example, helping the development of machines that create detailed artificial limbs in minutes or complete complex surgeries that even the best doctors would balk at.</p>
   
   <p data-i18n="aboutPara2">We believe this can be achieved through the use of AI. Why we decided to create a company focused on this goal is because we saw the potential of AI and how it can be used to test and enhance our creation processes and how the robotics industry would greatly benefit from having AI as a helper, as such the time it would take to create such groundbreaking tech would be cut in half furthering our goal to make the lives of all on this world we call home fruitful, so humanity can live without restraint and die knowing they had no regrets caused by cheap and fixable issues.</p>
+
 </div>
 
       <div class="about-img-cell"><img src="Pictures-for-website-CN43000/robot-meets-human-featured-1024x576.jpg" alt="Robotic hand touching human hand" style="width:100%;height:100%;object-fit:fill;display:block;"></div>
+    
     </div>
   </main>
+
   <footer>
+
      <div class="footer-links">
       <span data-i18n="copyright">Copyright @Ehdj@Rubicon.com</span>
       <a href="#" data-i18n="cookies">Cookies – In user accessibility agreement</a>
       <span data-i18n="contactFooter">Contact +44 7424 231374</span>
+    
     </div>
 
 
     <div class="lang-btn-wrapper">
+
       <button class="languages-btn" id="langToggleBtn"> Languages</button>
       <ul class="lang-dropdown" id="langDropdown" style="display: none;">
         <li data-lang="en">🇬🇧 English</li>
         <li data-lang="fr">🇫🇷 Français</li>
         <li data-lang="es">🇪🇸 Español</li>
       </ul>
+    
     </div>
   </footer>
+
+  // The language changes and such will require java script, as such they have been put here//
+  // Data regarding French and Spanish will be linked to data-i18 so that the website knows what it wants to be translated//
 
   <script>
     (function() {
       'use strict';
 
-      // LANGUAGE DATA 
-const translations = {
-  en: {
-  home: 'Home',
-  about: 'About Us',
-  products: 'Products',
-  purpose: 'Purpose',
-  newsroom: 'Newsroom',
-  contact: 'Contact Us',
-  futureRobotics: 'The Future of Robotics',
-  aboutHeadline: 'The future of robotics is not about replacing Humans but augmenting them',
-  aboutPara1: 'With the advancement of knowledge in the technology sector and the rise of AI in the public eye at Weng.I, we believe that through the combination of AI and Robotics we can improve the lives of all on Earth, for example, helping the development of machines that create detailed artificial limbs in minutes or complete complex surgeries that even the best doctors would balk at.',
-  aboutPara2: 'We believe this can be achieved through the use of AI. Why we decided to create a company focused on this goal is because we saw the potential of AI and how it can be used to test and enhance our creation processes and how the robotics industry would greatly benefit from having AI as a helper, as such the time it would take to create such groundbreaking tech would be cut in half furthering our goal to make the lives of all on this world we call home fruitful, so humanity can live without restraint and die knowing they had no regrets caused by cheap and fixable issues.',
-  copyright: 'Copyright @Ehdj@Rubicon.com',
-  cookies: 'Cookies – In user accessibility agreement',
-  contactFooter: 'Contact +44 7424 231374',
-  searchPlaceholder: 'Search',
-  langButton: ' Languages'
+       // LANGUAGE DATA 
+        const translations = {
+        en: {
+          home: 'Home',
+          about: 'About Us',
+          products: 'Products',
+          purpose: 'Purpose',
+          newsroom: 'Newsroom',
+          contact: 'Contact Us',
+          futureRobotics: 'The Future of Robotics',
+          aboutHeadline: 'The future of robotics is not about replacing Humans but augmenting them',
+          aboutPara1: 'With the advancement of knowledge in the technology sector and the rise of AI in the public eye at Weng.I, we believe that through the combination of AI and Robotics we can improve the lives of all on Earth, for example, helping the development of machines that create detailed artificial limbs in minutes or complete complex surgeries that even the best doctors would balk at.',
+          aboutPara2: 'We believe this can be achieved through the use of AI. Why we decided to create a company focused on this goal is because we saw the potential of AI and how it can be used to test and enhance our creation processes and how the robotics industry would greatly benefit from having AI as a helper, as such the time it would take to create such groundbreaking tech would be cut in half furthering our goal to make the lives of all on this world we call home fruitful, so humanity can live without restraint and die knowing they had no regrets caused by cheap and fixable issues.',
+          copyright: 'Copyright @Ehdj@Rubicon.com',
+          cookies: 'Cookies – In user accessibility agreement',
+          contactFooter: 'Contact +44 7424 231374',
+         searchPlaceholder: 'Search',
+          langButton: ' Languages'
 },
 
-  fr: {
-    home: 'Accueil',
-    about: 'À propos',
-    products: 'Produits',
-    purpose: 'Objectif',
-    newsroom: 'Salle de presse',
-    contact: 'Contactez-nous',
-    futureRobotics: 'Le futur de la robotique',
-    aboutHeadline: 'L\'avenir de la robotique ne consiste pas à remplacer les humains mais à les augmenter',
-    aboutPara1: 'Avec l\'avancement des connaissances dans le secteur technologique et l\'essor de l\'IA aux yeux du public chez Weng.I, nous croyons que grâce à la combinaison de l\'IA et de la robotique, nous pouvons améliorer la vie de tous sur Terre, par exemple, en aidant au développement de machines qui créent des membres artificiels détaillés en quelques minutes ou réalisent des chirurgies complexes que même les meilleurs médecins hésiteraient à faire.',
-    aboutPara2: 'Nous pensons que cela peut être réalisé grâce à l\'utilisation de l\'IA. Nous avons décidé de créer une entreprise axée sur cet objectif car nous avons vu le potentiel de l\'IA et comment elle peut être utilisée pour tester et améliorer nos processus de création, et comment l\'industrie de la robotique bénéficierait grandement d\'avoir l\'IA comme assistant, ainsi le temps nécessaire pour créer une telle technologie révolutionnaire serait réduit de moitié, poursuivant notre objectif de rendre la vie de tous sur cette planète fructueuse, afin que l\'humanité puisse vivre sans contrainte et mourir en sachant qu\'elle n\'a pas eu de regrets causés par des problèmes peu coûteux et réparables.',
-    copyright: 'Droits d\'auteur @Ehdj@Rubicon.com',
-    cookies: 'Cookies – Accord d\'accessibilité utilisateur',
-    contactFooter: 'Contact +44 7424 231374',
-    searchPlaceholder: 'Rechercher',
-    langButton: ' Langues'
+        fr: {
+          home: 'Accueil',
+          about: 'À propos',
+          products: 'Produits',
+          purpose: 'Objectif',
+          newsroom: 'Salle de presse',
+          contact: 'Contactez-nous',
+          futureRobotics: 'Le futur de la robotique',
+          aboutHeadline: 'L\'avenir de la robotique ne consiste pas à remplacer les humains mais à les augmenter',
+          aboutPara1: 'Avec l\'avancement des connaissances dans le secteur technologique et l\'essor de l\'IA aux yeux du public chez Weng.I, nous croyons que grâce à la combinaison de l\'IA et de la robotique, nous pouvons améliorer la vie de tous sur Terre, par exemple, en aidant au développement de machines qui créent des membres artificiels détaillés en quelques minutes ou réalisent des chirurgies complexes que même les meilleurs médecins hésiteraient à faire.',
+          aboutPara2: 'Nous pensons que cela peut être réalisé grâce à l\'utilisation de l\'IA. Nous avons décidé de créer une entreprise axée sur cet objectif car nous avons vu le potentiel de l\'IA et comment elle peut être utilisée pour tester et améliorer nos processus de création, et comment l\'industrie de la robotique bénéficierait grandement d\'avoir l\'IA comme assistant, ainsi le temps nécessaire pour créer une telle technologie révolutionnaire serait réduit de moitié, poursuivant notre objectif de rendre la vie de tous sur cette planète fructueuse, afin que l\'humanité puisse vivre sans contrainte et mourir en sachant qu\'elle n\'a pas eu de regrets causés par des problèmes peu coûteux et réparables.',
+          copyright: 'Droits d\'auteur @Ehdj@Rubicon.com',
+          cookies: 'Cookies – Accord d\'accessibilité utilisateur',
+          contactFooter: 'Contact +44 7424 231374',
+          searchPlaceholder: 'Rechercher',
+          langButton: ' Langues'
   },
 
-  es: {
-    home: 'Inicio',
-    about: 'Sobre nosotros',
-    products: 'Productos',
-    purpose: 'Propósito',
-    newsroom: 'Sala de prensa',
-    contact: 'Contáctenos',
-    futureRobotics: 'El futuro de la robótica',
-    aboutHeadline: 'El futuro de la robótica no se trata de reemplazar a los humanos sino de aumentarlos',
-    aboutPara1: 'Con el avance del conocimiento en el sector tecnológico y el auge de la IA en el ojo público en Weng.I, creemos que a través de la combinación de IA y Robótica podemos mejorar la vida de todos en la Tierra, por ejemplo, ayudando al desarrollo de máquinas que crean extremidades artificiales detalladas en minutos o realizan cirugías complejas que incluso los mejores médicos dudarían en hacer.',
-    aboutPara2: 'Creemos que esto se puede lograr mediante el uso de IA. Decidimos crear una empresa centrada en este objetivo porque vimos el potencial de la IA y cómo se puede utilizar para probar y mejorar nuestros procesos de creación, y cómo la industria robótica se beneficiaría enormemente de tener a la IA como ayudante, por lo que el tiempo necesario para crear tecnología tan innovadora se reduciría a la mitad, avanzando en nuestro objetivo de hacer que la vida de todos en este mundo sea fructífera, para que la humanidad pueda vivir sin restricciones y morir sabiendo que no tuvieron arrepentimientos causados por problemas baratos y solucionables.',
-    copyright: 'Derechos de autor @Ehdj@Rubicon.com',
-    cookies: 'Cookies – Acuerdo de accesibilidad',
-    contactFooter: 'Contacto +44 7424 231374',
-    searchPlaceholder: 'Buscar',
-    langButton: ' Idiomas'
+        es: {
+          home: 'Inicio',
+          about: 'Sobre nosotros',
+          products: 'Productos',
+          purpose: 'Propósito',
+          newsroom: 'Sala de prensa',
+          contact: 'Contáctenos',
+          futureRobotics: 'El futuro de la robótica',
+          aboutHeadline: 'El futuro de la robótica no se trata de reemplazar a los humanos sino de aumentarlos',
+          aboutPara1: 'Con el avance del conocimiento en el sector tecnológico y el auge de la IA en el ojo público en Weng.I, creemos que a través de la combinación de IA y Robótica podemos mejorar la vida de todos en la Tierra, por ejemplo, ayudando al desarrollo de máquinas que crean extremidades artificiales detalladas en minutos o realizan cirugías complejas que incluso los mejores médicos dudarían en hacer.',
+          aboutPara2: 'Creemos que esto se puede lograr mediante el uso de IA. Decidimos crear una empresa centrada en este objetivo porque vimos el potencial de la IA y cómo se puede utilizar para probar y mejorar nuestros procesos de creación, y cómo la industria robótica se beneficiaría enormemente de tener a la IA como ayudante, por lo que el tiempo necesario para crear tecnología tan innovadora se reduciría a la mitad, avanzando en nuestro objetivo de hacer que la vida de todos en este mundo sea fructífera, para que la humanidad pueda vivir sin restricciones y morir sabiendo que no tuvieron arrepentimientos causados por problemas baratos y solucionables.',
+          copyright: 'Derechos de autor @Ehdj@Rubicon.com',
+          cookies: 'Cookies – Acuerdo de accesibilidad',
+          contactFooter: 'Contacto +44 7424 231374',
+          searchPlaceholder: 'Buscar',
+          langButton: ' Idiomas'
   }
 };
 
@@ -402,8 +428,7 @@ if (savedLang && (savedLang === 'fr' || savedLang === 'es' || savedLang === 'en'
       
      })();
   </script>
+  
 </body>
 </html>
-  
-
   
