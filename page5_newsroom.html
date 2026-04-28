@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weng.I – Newsroom</title>
+  
+  <!-- As you can see below the CSS is held in style instead of a separate file due to being easier to manage -->
+
   <style>
+    
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Georgia', serif; background: #dadada; color: #111; }
     header { background: #111; display: flex; align-items: center; justify-content: space-between; padding: 10px 24px; }
@@ -14,6 +18,9 @@
     .logo-area { display: flex; align-items: center; gap: 16px; }
     .logo-img { width: 64px; height: 64px; object-fit: contain; border-radius: 4px; background: #333; }
     .logo-area a:hover {text-decoration: none;}
+
+     /* Navigation will have it design code as below */
+
     .site-title { color: #fff; font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
     .search-bar { display: flex; align-items: center; background: #fff; border-radius: 4px; overflow: hidden; }
     .search-bar input { border: none; outline: none; padding: 6px 12px; font-size: 0.9rem; width: 180px; }
@@ -101,28 +108,40 @@
 <!-- Main Code -->
 
 <body>
+
   <header>
+
     <div class="logo-area"> 
+
       <a href="page1_home.html" style="text-decoration: none; display: flex; align-items: center; gap: 16px;">
       <img src="Pictures-for-website-CN43000/Logo.jpg" alt="Weng.I Logo" class="logo-img">
        <span class="site-title">Weng.I</span>
        </a>
+
     </div>
+
     <div class="search-bar"><input type="text" placeholder="Search"><button>🔍</button></div>
+
   </header>
+
   <nav>
+
     <a href="page1_home.html">Home</a>
     <a href="page2_about.html">About Us</a>
     <a href="page3_products.html">Products</a>
     <a href="page4_purpose.html">Purpose</a>
     <a href="page5_newsroom.html" class="active">Newsroom</a>
     <a href="page6_contact.html">Contact Us</a>
-  </nav>
   
+  </nav>
+
+
   <!-- Newsroom Content code -->
 
   <main>
+
     <div class="article">
+
       <h1>The future of limb replacements- are they closer than we thought?</h1>
       <div class="article-img-wrap"> <img src="Pictures-for-website-CN43000/istockphoto-1092660470-612x612.jpg"  alt="Family Gathering" style="width:100%;height:100%;object-fit:fill;display:block;"></div>
       <p>With the advancement of human ingenuity and the rapid rise of AI, many are questioning long standing beliefs regarding the ethics and usability of bionic products.</p>
@@ -130,31 +149,43 @@
       <p>These products have been thought to have been a science that would take shape in the far future, but now, seems closer than ever to being common place all over the world.</p>
       
       <p>Consequently many are questioning, is it too soon to start integrating AI enhanced products into daily life or are we restricting a industry that may benifit the lives of all on Earth</p>
+    
     </div>
 
     <!-- Sidebar code -->
      
     <div class="sidebar">
   <h2>Other News</h2>
+
   <ul class="news-list">
-    <li class="news-item">See inside the research labs of the newest bionic centres, they may surprise you</li>
-    <li class="news-item">Pupils create prototype reactor out of school supplies</li>
-    <li class="news-item">New food delivery robot patented by Chinese megacorp</li>
-    <li class="news-item">A newborn Singaporean AI has become the first to control Avian drones with no human</li>
-    <li class="news-item">New rules regarding AI-controlled industry robots set to come into effect 19/9/27</li>
+
+       <li class="news-item">See inside the research labs of the newest bionic centres, they may surprise you</li>
+       <li class="news-item">Pupils create prototype reactor out of school supplies</li>
+       <li class="news-item">New food delivery robot patented by Chinese megacorp</li>
+       <li class="news-item">A newborn Singaporean AI has become the first to control Avian drones with no human</li>
+       <li class="news-item">New rules regarding AI-controlled industry robots set to come into effect 19/9/27</li>
+  
   </ul>
 </div>
 
   </main>
   <footer>
+
     <div class="footer-links">
+
       <span>Copyright @Ehdj@Rubicon.com</span>
       <a href="#">Cookies – In user accessibility agreement</a>
       <span>Contact +44 7424 231374</span>
+    
     </div>
     <button class="languages-btn">Languages</button>
+  
   </footer>
-    <script>
+  
+  // The language changes and such will require java script, as such they have been put here//
+  // Data regarding French and Spanish will be linked to data-i18 so that the website knows what it wants to be translated//
+
+  <script>
     (function() {
       'use strict';
 
@@ -414,5 +445,6 @@ if (savedLang && (savedLang === 'fr' || savedLang === 'es' || savedLang === 'en'
 
     })();
   </script>
+  
 </body>
 </html>
