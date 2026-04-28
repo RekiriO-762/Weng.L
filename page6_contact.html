@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weng.I – Contact Us</title>
+  
+  <!-- As you can see below the CSS is held in style instead of a separate file due to being easier to manage -->
+   
   <style>
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Georgia', serif; background: #fff; color: #111; }
     header { background: #111; display: flex; align-items: center; justify-content: space-between; padding: 10px 24px; }
@@ -28,13 +32,12 @@
 
     /* Footer design code */
 
-footer { background: #fff; border-top: 1px solid #ddd; padding: 20px 28px; display: flex; justify-content: center; align-items: center; position:relative ; font-size: 0.82rem; color: #444; }
+    footer { background: #fff; border-top: 1px solid #ddd; padding: 20px 28px; display: flex; justify-content: center; align-items: center; position:relative ; font-size: 0.82rem; color: #444; }
     .footer-links { display: flex; flex-direction: column; gap: 3.5px; position: absolute;left: 50%; transform: translateX(-50%);   ; }
     .footer-links a { color: #444; text-decoration: none; text-align: center; }
     .footer-links a:hover { text-decoration: underline; }
     .lang-btn-wrapper { margin-left: auto;}
     .languages-btn { border: 1px solid #999; background: #fff; padding: 4px 14px; border-radius: 4px; font-size: 0.82rem; cursor: pointer; }
-    
     .ph-icon { font-size: 2rem; margin-bottom: 6px; }
     .ph-label { font-weight: bold; font-size: 0.85rem; margin-bottom: 4px; color: #b35a00; }
 
@@ -56,10 +59,12 @@ footer { background: #fff; border-top: 1px solid #ddd; padding: 20px 28px; displ
 
 
   </style>
+
   <style>
     
     /* Langauge Dropdown */
     .lang-btn-wrapper { position: relative; display: inline-block; }
+    
     .lang-dropdown {
       position: absolute;
       bottom: 40px;
@@ -88,50 +93,65 @@ footer { background: #fff; border-top: 1px solid #ddd; padding: 20px 28px; displ
   <!-- Main Code -->
 
   <header>
+
     <div class="logo-area">
       <a href="page1_home.html" style="text-decoration: none; display: flex; align-items: center; gap: 16px;">
       <img src="Pictures-for-website-CN43000/Logo.jpg" alt="Weng.I Logo" class="logo-img">
        <span class="site-title">Weng.I</span>
        </a>
+
     </div>
+
     <div class="search-bar"><input type="text" placeholder="Search"><button>🔍</button></div>
+  
   </header>
+  
   <nav>
+
     <a href="page1_home.html">Home</a>
     <a href="page2_about.html">About Us</a>
     <a href="page3_products.html">Products</a>
     <a href="page4_purpose.html">Purpose</a>
     <a href="page5_newsroom.html">Newsroom</a>
     <a href="page6_contact.html" class="active">Contact Us</a>
+  
   </nav>
   
   <!-- Main body Code -->
 
   <main>
+
     <div class="contact-card">
+
       <h2>Send us a message</h2>
       <div class="form-group"><label for="name">Name:</label><input type="text" id="name" name="name"></div>
       <div class="form-group"><label for="email">Email:</label><input type="email" id="email" name="email"></div>
       <div class="form-group"><label for="subject">Subject:</label><input type="text" id="subject" name="subject"></div>
       <div class="form-group"><label for="message">Message</label><textarea id="message" name="message"></textarea></div>
       <button class="send-btn" onclick="handleSend()">Send</button>
+    
     </div>
 
     <div class="contact-info">
+
       <div class="info-line"><span>📍</span><strong>19 Afrant Street EK21 2DR, London</strong></div>
       <div class="info-line"><span>📞</span><span>(+44) +7839 4490839</span></div>
       <div class="info-line"><span>✉</span><span>info@Ehdj@Rubicon.com</span></div>
+    
     </div>
+
   </main>
  
   <!-- Footer text code -->
 
   <footer>
+
     <div class="footer-links">
       <span>Copyright @Ehdj@Rubicon.com</span>
       <a href="#">Cookies – In user accessibility agreement</a>
       <span>Contact +44 7424 231374</span>
     </div>
+
     <div class="lang-btn-wrapper">
       <button class="languages-btn" id="langToggleBtn"> Languages</button>
       <ul class="lang-dropdown" id="langDropdown" style="display: none;">
@@ -139,11 +159,13 @@ footer { background: #fff; border-top: 1px solid #ddd; padding: 20px 28px; displ
         <li data-lang="fr">🇫🇷 Français</li>
         <li data-lang="es">🇪🇸 Español</li>
       </ul>
+
     </div>
   </footer>
   
   <!-- Form Code -->
-
+  // As you can see below the form code will use JavaScript to validate the inputs done by the user to all fields are full //
+  
   <script>
     function handleSend() {
       if (!name||!email||!subject||!message) { alert('Please fill in all fields before sending.'); return; }
@@ -156,6 +178,7 @@ footer { background: #fff; border-top: 1px solid #ddd; padding: 20px 28px; displ
       document.getElementById('message').value='';
     }
   </script>
+  
   <script>
     
     // Contact form function
@@ -193,6 +216,10 @@ footer { background: #fff; border-top: 1px solid #ddd; padding: 20px 28px; displ
       window.currentLang = 'en';
 
       // ---------- LANGUAGE DATA ----------
+
+      // The language changes and such will require java script just like the forms//
+      // Data regarding French and Spanish will be linked to data-i18 so that the website knows what it wants to be translated//
+
       const translations = {
        
         en: {
@@ -464,5 +491,6 @@ if (savedLang && (savedLang === 'fr' || savedLang === 'es' || savedLang === 'en'
 }
 
     })();
+    
   </script>
 </html>
