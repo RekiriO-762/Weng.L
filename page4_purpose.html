@@ -4,21 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weng.I – Purpose</title>
+  
+  <!-- As you can see below the CSS is held in style instead of a separate file due to being easier to manage -->
+
   <style>
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Georgia', serif; background: #fff; color: #111; }
     header { background: #111; display: flex; align-items: center; justify-content: space-between; padding: 10px 24px; }
-   /* The code design for the logo and search */
+   
+    /* The code design for the logo and search */
    
     .logo-area { display: flex; align-items: center; gap: 16px; }
     .logo-area a:hover {text-decoration: none;}
     .logo-img { width: 64px; height: 64px; object-fit: contain; border-radius: 4px; background: #333; }
+     
+    /* Navigation will have it design code as below */
+
     .site-title { color: #fff; font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
     .search-bar { display: flex; align-items: center; background: #fff; border-radius: 4px; overflow: hidden; }
     .search-bar input { border: none; outline: none; padding: 6px 12px; font-size: 0.9rem; width: 180px; }
     .search-bar button { background: #fff; border: none; padding: 6px 10px; cursor: pointer; font-size: 1rem; color: #555; }
     .search-bar button:hover { color: #000; }
-
     nav { background: #fff; border-bottom: 1px solid #ddd; display: flex; justify-content: center; gap: 60px; padding: 12px 0; }
     nav a { text-decoration: none; color: #222; font-size: 0.95rem; }
     nav a.active { font-weight: 700; }
@@ -37,32 +44,33 @@
     .ph-note { font-size: 0.7rem; color: #a06000; margin-top: 4px; }
 
     /* Image design code */
-    main { padding: 28px 28px 40px; min-height: calc(100vh - 160px); }
+     main { padding: 28px 28px 40px; min-height: calc(100vh - 160px); }
     .purpose-text { font-size: 1.15rem; font-weight: 700; line-height: 1.8; text-align: center; margin-bottom: 18px; }
     .image-row { display: flex; gap: 8px; margin-top: 20px; }
     .image-row .img-cell { flex: 5; height: 600px; overflow: hidden; }
     .image-row .img-cell img { width: 200%; height: 200%; object-fit: fill; display: block; }
   
     /* Image hover levitation effect */
-   .image-row {position: relative;}
-   .img-cell {position: relative;transition: transform 0.3s ease, box-shadow 0.3s ease;}
-   .img-cell:hover {  transform: translateY(-10px); box-shadow: 0 20px 30px rgba(0, 0, 0, 0.8);  z-index: 10;}
+    .image-row {position: relative;}
+    .img-cell {position: relative;transition: transform 0.3s ease, box-shadow 0.3s ease;}
+    .img-cell:hover {  transform: translateY(-10px); box-shadow: 0 20px 30px rgba(0, 0, 0, 0.8);  z-index: 10;}
 
 /* Text overlay on hover */
-.img-cell::after { content:''; position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);color: white;font-size: 1.8rem;font-weight: 900;text-align: center;text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);opacity: 0;transition: opacity 0.3s ease;white-space: nowrap;z-index: 20;pointer-events: none;}
-.img-cell:first-child::after {content: 'Genetic Complications';}
-.img-cell:nth-child(2)::after {content: 'Old Age';}
-.img-cell:last-child::after {content: 'Workplace Incidents';}
-.img-cell:hover::after {opacity: 1;}
+    .img-cell::after { content:''; position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);color: white;font-size: 1.8rem;font-weight: 900;text-align: center;text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);opacity: 0;transition: opacity 0.3s ease;white-space: nowrap;z-index: 20;pointer-events: none;}
+    .img-cell:first-child::after {content: 'Genetic Complications';}
+    .img-cell:nth-child(2)::after {content: 'Old Age';}
+    .img-cell:last-child::after {content: 'Workplace Incidents';}
+    .img-cell:hover::after {opacity: 1;}
 
 /* Darken the rest of the page when hovering */
-.image-row:hover .img-cell:not(:hover) {opacity: 0.3;filter: grayscale(0.5);transition: opacity 0.3s ease, filter 0.3s ease;}
-.image-row .img-cell {transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;}
-.img-cell:hover {opacity: 1 !important; filter: grayscale(0) !important;}
+    .image-row:hover .img-cell:not(:hover) {opacity: 0.3;filter: grayscale(0.5);transition: opacity 0.3s ease, filter 0.3s ease;}
+    .image-row .img-cell {transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;}
+    .img-cell:hover {opacity: 1 !important; filter: grayscale(0) !important;}
   </style>
   
   <!-- Language Dropdown settings -->
   <style>
+    
     .lang-btn-wrapper { position: relative; display: inline-block; }
     .lang-dropdown {
       position: absolute;
@@ -91,45 +99,65 @@
 
 <!-- Main Code -->
 <body>
+
   <header>
+
     <a href="page1_home.html" style="text-decoration: none; display: flex; align-items: center; gap: 16px;">
       <img src="Pictures-for-website-CN43000/Logo.jpg" alt="Weng.I Logo" class="logo-img">
        <span class="site-title">Weng.I</span>
        </a>
     <div class="search-bar"><input type="text" placeholder="Search"><button>🔍</button></div>
   </header>
+
+
   <nav>
+
     <a href="page1_home.html">Home</a>
     <a href="page2_about.html">About Us</a>
     <a href="page3_products.html">Products</a>
     <a href="page4_purpose.html" class="active">Purpose</a>
     <a href="page5_newsroom.html">Newsroom</a>
     <a href="page6_contact.html">Contact Us</a>
+  
   </nav>
+  
   <main>
     <p class="purpose-text">As you can see in the world around us mistakes are bound to happen, no matter what field you work in , due to either permanent limitations such as old age, changeable limitations such harrowing environments or lack of proper tools or mental health struggles. We at Weng.I (pronounced Vehng-uhl) saw this and decided to make sure these limits can be lessened and or removed so that humanity as a whole can improve, leading to change that will be for the better. To do this we plan to use AI to speed this along.</p>
     <p class="purpose-text">We decided to do to this because we saw the inovation that AI can bring through companies such as Chat gpt, DeepSeek etc, as we can use them to train our products so that whenever we give our products out to the public, we can make sure that all possible possibilities are accounted for so any new problems that do arise, can be adapted to and removed so that our customers can live their lives to the standard that they all humans deserve.</p>
     <div class="image-row">
+   
       <div class="img-cell"> <img src="Pictures-for-website-CN43000/B-nov-16-diabetes-1.webp" alt="Bandaged limb" style="width:100%;height:100%;object-fit:fill;display:block;"></div>
 
       <div class="img-cell"> <img src="Pictures-for-website-CN43000/cover-medium.jpg" alt="Elderly person with medication" style="width:100%;height:100%;object-fit:fill;display:block;"></div>
       
       <div class="img-cell"> <img src="Pictures-for-website-CN43000/engineer-worker-accident-factory-worker.jpg" alt="Worker in safety gear" style="width:100%;height:150%;object-fit:fill;display:block;"></div>
+   
     </div>
+  
   </main>
   <footer>
+  
     <div class="footer-links">
+
       <span>Copyright @Ehdj@Rubicon.com</span>
       <a href="#">Cookies – In user accessibility agreement</a>
       <span>Contact +44 7424 231374</span>
+  
     </div>
     <button class="languages-btn">Languages</button>
+  
   </footer>
-    <script>
+  
+  <script>
+
+    // The language changes and such will require java script, as such they have been put here//
+    // Data regarding French and Spanish will be linked to data-i18 so that the website knows what it wants to be translated//
+
     (function() {
       'use strict';
 
       // ---------- LANGUAGE DATA ----------
+      
       const translations = {
         en: {
           home: 'Home',
@@ -323,5 +351,6 @@ if (savedLang && (savedLang === 'fr' || savedLang === 'es' || savedLang === 'en'
 
     })();
   </script>
+
 </body>
 </html>
